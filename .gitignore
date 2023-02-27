@@ -1,0 +1,11 @@
+input/*
+__pycache__/*
+
+*.obj
+*.mtl
+*.png
+*.jpg
+*.ply
+*.DS_Store
+*.latk
+
