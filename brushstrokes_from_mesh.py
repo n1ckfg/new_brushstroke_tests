@@ -3,7 +3,7 @@ import numpy as np
 import latk
 from common import *
 
-inputUrl = "input/input.ply"
+inputUrl = "untitled.ply"
 #inputUrl = "input/input_001_resample.ply"
 #inputUrl = "input/TeiyaPrime_000.obj"
 
