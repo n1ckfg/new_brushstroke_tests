@@ -4,7 +4,7 @@ from shapely.geometry import Polygon
 import latk
 import math
 
-la = latk.Latk("test.latk")
+la = latk.Latk("output.latk")
 la_layer = la.layers[0]
 print("Loaded latk.")
 
