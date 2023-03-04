@@ -6,3 +6,5 @@ rtree
 latk
 skeletor
 scikit-image
+shapely
+mapbox_earcut
