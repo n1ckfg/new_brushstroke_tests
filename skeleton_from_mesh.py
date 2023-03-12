@@ -5,13 +5,12 @@ import numpy as np
 import latk
 from common import *
 
-inputUrl = "input/input.ply"
-#inputUrl = "input/input_001_resample.ply"
-#inputUrl = "input/TeiyaPrime_000.obj"
+argv = sys.argv[sys.argv.index("--") + 1:] # get all args after "--"
+inputPath = argv[0]
 
 la = latk.Latk(init=True)
 
-mesh = loadMesh(inputUrl)
+mesh = loadMesh(inputPath)
 
 fixed = sk.pre.fix_mesh(mesh, remove_disconnected=5, inplace=False)
 skel = sk.skeletonize.by_wavefront(fixed, waves=1, step_size=1)

@@ -4,13 +4,12 @@ import numpy as np
 import latk
 from common import *
 
-inputUrl = "untitled.ply"
-#inputUrl = "input/input_001_resample.ply"
-#inputUrl = "input/TeiyaPrime_000.obj"
+argv = sys.argv[sys.argv.index("--") + 1:] # get all args after "--"
+inputPath = argv[0]
 
 la = latk.Latk(init=True)
 
-mesh = loadMesh(inputUrl)
+mesh = loadMesh(inputPath)
 
 bounds = getBounds(mesh)
 

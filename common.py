@@ -3,11 +3,19 @@ import trimesh
 import pymeshlab as ml
 from sklearn.cluster import DBSCAN
 from scipy.interpolate import splprep, splev
+import sys
 
 def distance(point1, point2):
     point1 = np.array(point1)
     point2 = np.array(point2)
     return np.linalg.norm(point1 - point2)
+
+def map(value, inMin, inMax, outMin, outMax):
+    return outMin + (((value - inMin) / (inMax - inMin)) * (outMax - outMin))
+
+def normalizeMesh(vertices):
+    magnitudes = np.linalg.norm(vertices, axis=1)
+    return vertices / magnitudes[:, np.newaxis]
 
 def loadMesh(inputUrl):
     mesh = trimesh.load(inputUrl)
