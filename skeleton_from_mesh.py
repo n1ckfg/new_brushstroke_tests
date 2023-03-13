@@ -27,6 +27,7 @@ for entity in skel.skeleton.entities:
     la.layers[0].frames[0].strokes.append(la_s)
 
 if (len(la.layers[0].frames[0].strokes) > 0):
+    la.normalize()
     la.write("output.latk")
 else:
     print("No strokes generated.")
