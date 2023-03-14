@@ -9,7 +9,7 @@ inputPath = argv[0]
 
 la = latk.Latk(init=True)
 
-mesh = loadMesh(inputPath)
+mesh = trimesh.load(inputPath)
 bounds = getBounds(mesh)
 searchRadius = bounds * 0.02
 print("Search radius: " + str(searchRadius))
