@@ -12,7 +12,8 @@ la = latk.Latk(init=True)
 mesh = trimesh.load(inputPath)
 bounds = getBounds(mesh)
 searchRadius = bounds * 0.02
-print("Search radius: " + str(searchRadius))
+minPointsCount=10
+print("Search radius: " + str(searchRadius) + "Min points per stroke: " + str(minPointsCount))
 
 def group_points_into_strokes(points, radius):
     strokes = []
@@ -27,7 +28,7 @@ def group_points_into_strokes(points, radius):
                 stroke.append(i)
                 unassigned_points.remove(i)
 
-        if (len(stroke) > 1):
+        if (len(stroke) >= minPointsCount):
         	strokes.append(stroke)
         print("Found " + str(len(strokes)) + " strokes, " + str(len(unassigned_points)) + " points remaining.")
     return strokes
