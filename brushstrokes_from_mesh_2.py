@@ -13,7 +13,7 @@ mesh = trimesh.load(inputPath)
 bounds = getBounds(mesh)
 searchRadius = bounds * 0.02
 minPointsCount=10
-print("Search radius: " + str(searchRadius) + "Min points per stroke: " + str(minPointsCount))
+print("Search radius: " + str(searchRadius) + ", Min points per stroke: " + str(minPointsCount))
 
 def group_points_into_strokes(points, radius):
     strokes = []
