@@ -54,3 +54,14 @@ def dbscanLines(points, eps=0.1, min_samples=5):
         returns.append(new_points)
 
     return returns
+
+def voxelize(mesh, dim=128):
+    dims = (dim, dim, dim)
+    grid = np.zeros(dims)
+    
+    for point in mesh.vertices:
+        x, y, z = point
+        ix, iy, iz = int(x / dim), int(y / dim), int(z / dim)
+        grid[ix, iy, iz] = 1
+
+    return grid
