@@ -5,6 +5,7 @@ __pycache__/*
 *.mtl
 *.png
 *.jpg
+*.ply
 *.DS_Store
 *.latk
 
