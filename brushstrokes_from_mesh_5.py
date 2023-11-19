@@ -24,6 +24,7 @@ def generate_polylines(points, labels):
             continue
 
         cluster_points = points[labels == label]
+        print(str(len(cluster_points)) + " ||| " + str(len(cluster_points[0])))
 
         # Fit a curve to each cluster
         tck, u = splprep([cluster_points[:, 0], cluster_points[:, 1], cluster_points[:, 2]], s=0)
@@ -36,7 +37,6 @@ def generate_polylines(points, labels):
 point_cloud = load_point_cloud("elephant.ply")
 labels = cluster_points(point_cloud)
 polylines = generate_polylines(point_cloud, labels)
-print(polylines)
 
 la = latk.Latk(init=True)
 
