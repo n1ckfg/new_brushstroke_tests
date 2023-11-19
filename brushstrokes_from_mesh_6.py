@@ -27,7 +27,7 @@ def generate_polylines(points, num_neighbors=2):
 
     return polylines
 
-point_cloud = load_point_cloud("elephant.ply")
+point_cloud = load_point_cloud("input/untitled007.ply")
 polylines = generate_polylines(point_cloud, num_neighbors)
 
 la = latk.Latk(init=True)
