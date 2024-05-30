@@ -5,6 +5,7 @@ from collections import defaultdict
 import matplotlib.pyplot as plt
 
 default_distance_threshold = 0.02
+file_path = "input/elephant.ply"
 
 def load_point_cloud(file_path):
     pcd = o3d.io.read_point_cloud(file_path)
@@ -68,8 +69,6 @@ def visualize_polylines(polylines):
     plt.show()
 
 if __name__ == "__main__":
-    file_path = "input_010.ply"
-    
     print("Loading point cloud: " + file_path)
     pcd = load_point_cloud(file_path)
 
